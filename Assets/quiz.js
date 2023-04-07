@@ -24,74 +24,74 @@ let questions = [
   }
   {
     question: "What color are my eyes?",
-    choice1: "blue",
+    choice1: "hazel",
     choice2: "i don't know you",
-    choice3: "hazel",
+    choice3: "blue",
     choice4: "brown"
-    answer: 
+    answer: 3
   }
   {
-    question: "",
-    choice1: "",
-    choice2: "uhhh...Marie?",
-    choice3: "",
-    choice4: ""
-    answer: 
+    question: "What's my favorite Taylor Swift song?",
+    choice1: "i literally can't choose",
+    choice2: "Afterglow",
+    choice3: "this is me trying",
+    choice4: "illicit affairs"
+    answer: 1
   }
   {
-    question: "",
-    choice1: "",
-    choice2: "uhhh...Marie?",
-    choice3: "",
-    choice4: ""
-    answer: 
+    question: "What sport did I play in college?",
+    choice1: "we aren't friends, i DON'T KNOW",
+    choice2: "lacrosse",
+    choice3: "swimming",
+    choice4: "tennis"
+    answer: 3
   }
   {
-    question: "",
-    choice1: "",
-    choice2: "uhhh...Marie?",
-    choice3: "",
-    choice4: ""
-    answer: 
+    question: "Which bone have I broken?",
+    choice1: "pinky toe",
+    choice2: "spine",
+    choice3: "like, i'm sorry but idk",
+    choice4: "patella"
+    answer: 2
   }
   {
-    question: "",
-    choice1: "",
-    choice2: "uhhh...Marie?",
-    choice3: "",
-    choice4: ""
-    answer: 
+    question: "How many times have I seen One Direction (r.i.p) live?",
+    choice1: "ten...maybe get a hobby",
+    choice2: "every single show when they were on the Take Me Home tour",
+    choice3: "THREE IS LUCKY BABY",
+    choice4: "why would i KNOW?"
+    answer: 3
   }
   {
-    question: "",
-    choice1: "",
-    choice2: "uhhh...Marie?",
-    choice3: "",
-    choice4: ""
-    answer: 
+    question: "Guess my favorite movie!",
+    choice1: "Hereditary (2018)",
+    choice2: "I Love You, Man (2009)",
+    choice3: "Psycho (1960)",
+    choice4: "12 Angry Men (1957)"
+    answer: 3
   }
   {
-    question: "",
-    choice1: "",
-    choice2: "uhhh...Marie?",
-    choice3: "",
-    choice4: ""
-    answer: 
+    question: "What job have I NOT had?",
+    choice1: "crime scene photographer",
+    choice2: "lifeguard",
+    choice3: "Tiff's Treats delivery driver",
+    choice4: "pre-school teacher"
+    answer: 1
   }
   {
-    question: "",
-    choice1: "",
-    choice2: "uhhh...Marie?",
-    choice3: "",
-    choice4: ""
-    answer: 
+    question: "EASY ONE: What is my favorite color?",
+    choice1: "pink but like the nice shade (ya know the one)",
+    choice2: "jade green",
+    choice3: "red",
+    choice4: "powder blue"
+    answer: 1
   }
   {
-    question: "",
-    choice1: "",
-    choice2: "uhhh...Marie?",
-    choice3: "",
-    choice4: ""
-    answer: 
+    question: "How tall am I?",
+    choice1: "hmmm I've never seen you?",
+    choice2: "6ft(182.88cm)",
+    choice3: "5'2(160.02cm)",
+    choice4: "5'7(170.18cm)"
+    answer: 4
   }
 ]

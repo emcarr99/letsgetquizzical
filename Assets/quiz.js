@@ -5,11 +5,10 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 console.log(choices);
 // shows up as an HTML collection in console
-const questionsCounterText = document.getElementById('questionsCounter');
-const scoreText = document.getElementById('score');
+const progressCounterText = document.getElementById("progressText");
+const scoreText = document.getElementById("score");
+const progressBarFull = document.getElementById("progressBarFull");
 
-
-// ! Needed:
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -119,7 +118,9 @@ getNewQuestion = () => {
     return window.location.assign("/end.html");
   }
   questionsCounter++;
-  questionsCounterText.innerText = questionsCounter + '/' + MAX_QUESTIONS;
+  progressText.innerText = "Question " + questionsCounter + "/" + MAX_QUESTIONS;
+  // update progress
+  progressBarFull.style.width = `${(questionsCounter / MAX_QUESTIONS) * 100}%`;
 
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
@@ -150,25 +151,25 @@ choices.forEach((choice) => {
       classToApply = "correct";
     }
     // console.log(classToApply); <- used to catch the syntax error of above & to test if it was logging 'correct'/'true' || 'incorrect'/'false'
-    if(classToApply == 'correct') {
+    if (classToApply == "correct") {
       incrementScore(CORRECT_BONUS);
     }
 
     selectChoice.parentElement.classList.add(classToApply);
     // .add is how to add classes in javascript
-    setTimeout( () => {
+    setTimeout(() => {
       selectChoice.parentElement.classList.remove(classToApply);
       // .remove to remove class in javascript
       getNewQuestion();
     }, 1000);
-    
+
     console.log(selectAnswer == currentQuestion.answer);
     // checks if the selected answer was the 'right' one
   });
 });
 
-incrementScore = num => {
-  score +=num;
+incrementScore = (num) => {
+  score += num;
   scoreText.innerText = score;
 };
 

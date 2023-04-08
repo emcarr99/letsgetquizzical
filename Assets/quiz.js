@@ -111,6 +111,10 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
+  if (availableQuestions.length === 0 || questionsCounter > MAX_QUESTIONS) {
+    // go to end page
+    return window.location.assign('/end.html')
+  }
   questionsCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
@@ -138,4 +142,6 @@ choices.forEach(choice => {
     getNewQuestion();
   })
 })
+
+
 startGame();

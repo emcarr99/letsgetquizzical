@@ -26,3 +26,44 @@
   padding: 1.5rem;
   width: 100%;
 }
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
+/* HUD - Heads up display */
+
+#hud {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hud-prefix {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.hud-main-text {
+  text-align: center;
+}
+
+#progressBar {
+  width: 20rem;
+  height: 4rem;
+  border: .3rem solid #56a5eb;
+  border-radius: 5rem;
+  margin-top: 2rem;
+}
+
+#progressBarFull {
+  height: 3.5rem;
+  background-color: #56a5eb;
+  border-radius: 5rem;
+  width: 50%;
+}
+
+

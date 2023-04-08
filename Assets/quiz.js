@@ -5,8 +5,10 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 console.log(choices);
 // shows up as an HTML collection in console
+const progressCounterText = document.getElementById("progressText");
+const scoreText = document.getElementById("score");
+const progressBarFull = document.getElementById("progressBarFull");
 
-// ! Needed:
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -97,7 +99,7 @@ let questions = [
 ];
 
 // create constants
-const CORRECT_BONUS = 10;
+const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 
 startGame = () => {
@@ -111,14 +113,23 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
+  if (availableQuestions.length === 0 || questionsCounter > MAX_QUESTIONS) {
+    localStorage.setItem('mostRecentScore', score);
+    // go to end page
+    return window.location.assign("/end.html");
+  }
   questionsCounter++;
+  progressText.innerText = "Question " + questionsCounter + "/" + MAX_QUESTIONS;
+  // update progress
+  progressBarFull.style.width = `${(questionsCounter / MAX_QUESTIONS) * 100}%`;
+
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
 
-  choices.forEach( choice => {
-   const number = choice.dataset['number'];
-   choice.innerText = currentQuestion['choice' + number];
+  choices.forEach((choice) => {
+    const number = choice.dataset["number"];
+    choice.innerText = currentQuestion["choice" + number];
   });
 
   availableQuestions.splice(questionIndex, 1);
@@ -126,16 +137,41 @@ getNewQuestion = () => {
   acceptingAnswers = true;
 };
 
-choices.forEach(choice => {
-  choice.addEventListener('click', e => {
+choices.forEach((choice) => {
+  choice.addEventListener("click", (e) => {
     // console.log(e.target); <- checked that it was bringing up the answer clicked on
     if (!acceptingAnswers) return;
 
     acceptingAnswers = false;
     const selectChoice = e.target;
-    const selectAnswer = selectChoice.dataset['number'];
-    console.log(selectAnswer);
-    getNewQuestion();
-  })
-})
+    const selectAnswer = selectChoice.dataset["number"];
+
+    // had to change to let so that it would allow it to change between right and wrong
+    let classToApply = "incorrect";
+    if (selectAnswer == currentQuestion.answer) {
+      classToApply = "correct";
+    }
+    // console.log(classToApply); <- used to catch the syntax error of above & to test if it was logging 'correct'/'true' || 'incorrect'/'false'
+    if (classToApply == "correct") {
+      incrementScore(CORRECT_BONUS);
+    }
+
+    selectChoice.parentElement.classList.add(classToApply);
+    // .add is how to add classes in javascript
+    setTimeout(() => {
+      selectChoice.parentElement.classList.remove(classToApply);
+      // .remove to remove class in javascript
+      getNewQuestion();
+    }, 1000);
+
+    console.log(selectAnswer == currentQuestion.answer);
+    // checks if the selected answer was the 'right' one
+  });
+});
+
+incrementScore = (num) => {
+  score += num;
+  scoreText.innerText = score;
+};
+
 startGame();

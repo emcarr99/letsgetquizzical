@@ -16,8 +16,7 @@ let questionsCounter = 0;
 let availableQuestions = [];
 // array of all the questions
 let questions = [];
-
-
+// cleaner to pull from json than to have a giant array of questions
 fetch("questions.json")
   .then((res) => {
     return res.json();
@@ -26,6 +25,8 @@ fetch("questions.json")
     questions = loadedQuestions;
     startGame();
   })
+  // will show if file name is mistyped 
+  // if something returns a promise, it's recommended to also do catch
   .catch((err) => {
     console.error(err);
   });

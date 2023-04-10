@@ -8,6 +8,9 @@ console.log(choices);
 const progressCounterText = document.getElementById("progressText");
 const scoreText = document.getElementById("score");
 const progressBarFull = document.getElementById("progressBarFull");
+// empty to global variable to hold timer
+let timer;
+let timerCount;
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -35,6 +38,7 @@ const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 
 startGame = () => {
+  timerCount = 120;
   questionsCounter = 0;
   score = 0;
   availableQuestions = [...questions];
@@ -43,6 +47,13 @@ startGame = () => {
   // logged availableQuestions as the questions array -> once startGame is called
   getNewQuestion();
 };
+
+function startTime () {
+  timer = setInterval(function() {
+    timerCount--;
+    timer.textContent =timerCount;
+  })
+}
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionsCounter > MAX_QUESTIONS) {

@@ -10,6 +10,8 @@ const highScore = JSON.parse(localStorage.getItem("highScore")) || [];
 console.log(highScore);
 const MAX_HIGH_SCORES = 5;
 
+finalScore.innerText = mostRecentScore
+
 initials.addEventListener("keyup", () => {
   // console.log(initials.value); logs what is typed in the form
   saveScoreBtn.disabled = !initials.value;
@@ -30,8 +32,9 @@ saveHighScore = (e) => {
   // at index 5 cut off everything following it
   highScore.splice(5);
 
-  localStorage.getItem('highScore', JSON.stringify(highScore));
+  localStorage.setItem('highScore', JSON.stringify(highScore));
   window.location.assign('/');
-};
+}; 
+// has GET item instead of SET ite
 
 console.log(highScore);

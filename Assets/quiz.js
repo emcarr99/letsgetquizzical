@@ -61,7 +61,7 @@ function startTime() {
 }
 // redirects player if timer ends before the questions do
 function pleaseWork() {
-  return window.location.assign("/");
+  return window.location.assign("/end.html");
 }
 
 getNewQuestion = () => {
@@ -114,10 +114,11 @@ choices.forEach((choice) => {
 
     selectChoice.parentElement.classList.add(classToApply);
     // .add is how to add classes in javascript
-
-    selectChoice.parentElement.classList.remove(classToApply);
+    setTimeout(() => {
+      selectChoice.parentElement.classList.remove(classToApply);
     // .remove to remove class in javascript
     getNewQuestion();
+    }, 1000);
 
     console.log(selectAnswer == currentQuestion.answer);
     // checks if the selected answer was the 'right' one

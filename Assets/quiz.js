@@ -38,7 +38,7 @@ const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 
 startGame = () => {
-  timerCount = 5;
+  timerCount = 120;
   questionsCounter = 0;
   score = 0;
   availableQuestions = [...questions];

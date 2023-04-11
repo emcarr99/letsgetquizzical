@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="Assets/style.css" />
   </head>
   <body>
-    <div class="container">
-      <div id="end" class="flex-center flex-column">
+    <div class="containerMe">
+      <div id="end" class="flex-center flex-columns">
         <h1 id="finalScore"></h1>
         <form>
           <input
@@ -20,7 +20,7 @@
           />
           <button
             type="submit"
-            class="btn"
+            class="btnMe"
             id="saveScoreBtn"
             onclick="saveHighScore(event)"
             disabled
@@ -28,8 +28,9 @@
             Save
           </button>
         </form>
-        <a href="/game.html" class="btn">Play Again</a>
-        <a href="/" class="btn">Home</a>
+        <a href="/game.html" class="btnMe">Play Again</a>
+        <a href="/" class="btnMe">Home</a>
+        <a href="/cheatsheet.html" class="btnMe">Cheat Sheet</a>
       </div>
     </div>
     <script src="Assets/end.js"></script>

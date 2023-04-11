@@ -41,9 +41,15 @@ h3 {
   font-weight: 500;
 }
 
+/* to over ride the bootstrap things at times */
+.bodyB {
+  background-color: antiquewhite;
+  font-size: 62.5%;
+}
+
 /* utilities */
 
-.container {
+.containerMe {
   width: 100vw;
   height: 100vw;
   display: flex;
@@ -54,11 +60,11 @@ h3 {
   padding: 2rem;
 }
 /* applies to any children of container */
-.container > * {
+.containerMe > * {
   width: 100%;
 }
 
-.flex-column {
+.flex-columns {
   display: flex;
   flex-direction: column;
 }
@@ -82,7 +88,7 @@ h3 {
 
 /* button mashin' */
 
-.btn {
+.btnMe {
   font-size: 1.8rem;
   padding: 1rem 0;
   width: 20rem;
@@ -96,14 +102,14 @@ h3 {
   border-radius: 2rem;
 }
 /* creates a glow around button */
-.btn:hover {
+.btnMe:hover {
   cursor: pointer;
   box-shadow: 0 0.4rem 1.4rem 0 #FFA69E;
   transform: translate(-0.1rem);
   transition: transform 150ms;
 }
 /* will eventually use when doing the highscores page */
-.btn[disabled]:hover {
+.btnMe[disabled]:hover {
   cursor: not-allowed;
   box-shadow: none;
   transform: none;

@@ -8,10 +8,10 @@ console.log(choices);
 const progressCounterText = document.getElementById("progressText");
 const scoreText = document.getElementById("score");
 const progressBarFull = document.getElementById("progressBarFull");
-// empty to global variable to hold timer
-let timer;
-let timerCount;
-
+const countdown = document.getElementById('timerCount');
+let timer = 0;
+let timerCount = 120;
+let interval = setInterval(startTime, 1000);
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -45,18 +45,17 @@ startGame = () => {
   // using spread to copy in the questions array
   console.log(availableQuestions);
   // logged availableQuestions as the questions array -> once startGame is called
+  startTime();
   getNewQuestion();
 };
 
 function startTime () {
-  timer = setInterval(function() {
-    timerCount--;
-    timer.textContent =timerCount;
-  })
+  timer++
+  countdown.innerHTML = timerCount - timer;
 }
 
 getNewQuestion = () => {
-  if (availableQuestions.length === 0 || questionsCounter > MAX_QUESTIONS) {
+  if (availableQuestions.length === 0 || (timerCount === 0)) {
     localStorage.setItem("mostRecentScore", score);
     // go to end page
     return window.location.assign("/end.html");
@@ -116,3 +115,6 @@ incrementScore = (num) => {
   score += num;
   scoreText.innerText = score;
 };
+
+
+

@@ -61,7 +61,7 @@ function startTime() {
 }
 // redirects player if timer ends before the questions do
 function pleaseWork() {
-  return window.location.assign("/end.html");
+  return window.location.assign("https://emcarr99.github.io/letsgetquizzical/end.html");
 }
 
 getNewQuestion = () => {

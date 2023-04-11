@@ -26,7 +26,7 @@ From the 'High Score' page you can return to the 'Home' page just by clicking th
 
 Have fun playing!
 ## Credits 
-The following tutorials by James Q. Quick (https://www.youtube.com/@JamesQQuick) were reference throughout this project to guide and deepen my understanding of JavaScript methods used to complete these projects.
+The following tutorials by James Q. Quick (https://www.youtube.com/@JamesQQuick) were referenced throughout this project to guide and deepen my understanding of JavaScript methods used to complete these projects.
 
 https://youtu.be/_LYxkClHnV0
 https://youtu.be/BOQLbu_Crc0

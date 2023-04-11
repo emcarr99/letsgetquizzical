@@ -51,8 +51,14 @@ startGame = () => {
 
 function startTime () {
   timer++
-  countdown.innerHTML = timerCount - timer;
+  countdown.innerHTML = (convertSeconds(timerCount - timer));
+
+  if (timer == timerCount) {
+    clearInterval(interval);
+  }
 }
+
+
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || (timerCount === 0)) {
@@ -98,6 +104,10 @@ choices.forEach((choice) => {
       incrementScore(CORRECT_BONUS);
     }
 
+    if (classToApply == 'incorrect') {
+      timerCount -= 5;
+    }
+
     selectChoice.parentElement.classList.add(classToApply);
     // .add is how to add classes in javascript
     setTimeout(() => {
@@ -116,5 +126,10 @@ incrementScore = (num) => {
   scoreText.innerText = score;
 };
 
-
+// helps w visual
+function convertSeconds(s) {
+  var min = Math.floor(s / 60);
+  var sec = s % 60;
+  return min + ":" + sec;
+}
 

@@ -38,7 +38,7 @@ const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 
 startGame = () => {
-  timerCount = 120;
+  timerCount = 5;
   questionsCounter = 0;
   score = 0;
   availableQuestions = [...questions];
@@ -55,7 +55,13 @@ function startTime() {
 
   if (timer == timerCount) {
     clearInterval(interval);
+
+    pleaseWork();
   }
+}
+// redirects player if timer ends before the questions do
+function pleaseWork() {
+  return window.location.assign("/");
 }
 
 getNewQuestion = () => {
@@ -108,11 +114,10 @@ choices.forEach((choice) => {
 
     selectChoice.parentElement.classList.add(classToApply);
     // .add is how to add classes in javascript
-    setTimeout(() => {
-      selectChoice.parentElement.classList.remove(classToApply);
-      // .remove to remove class in javascript
-      getNewQuestion();
-    }, 1000);
+
+    selectChoice.parentElement.classList.remove(classToApply);
+    // .remove to remove class in javascript
+    getNewQuestion();
 
     console.log(selectAnswer == currentQuestion.answer);
     // checks if the selected answer was the 'right' one
@@ -130,5 +135,3 @@ function convertSeconds(s) {
   var sec = s % 60;
   return min + ":" + sec;
 }
-
-setTimeout()

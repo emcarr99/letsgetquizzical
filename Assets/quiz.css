@@ -5,12 +5,13 @@
   font-size: 1.8rem;
   border: 0.1rem solid rgb(86, 165, 235, 0.25);
   background-color: white;
+  border-radius: 2rem;
 }
 
 /* same effect from the button hover */
 .choice-container:hover {
   cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  box-shadow: 0 0.4rem 1.4rem 0 #FFA69E;
   transform: translate(-0.1rem);
   transition: transform 150ms;
 }
@@ -18,8 +19,9 @@
 /* inner element to style the answer choices (a,b,c,d */
 .choice-prefix {
   padding: 1.5rem 2.5rem;
-  background-color: blueviolet;
+  background-color: #FFA69E;
   color: white;
+  border-radius: 2rem;
 }
 /* adds space between answer choice and the prefix */
 .choice-text {
@@ -28,11 +30,11 @@
 }
 
 .correct {
-  background-color: green;
+  background-color: #619B8A;
 }
 
 .incorrect {
-  background-color: red;
+  background-color: #ef233c;
 }
 
 /* HUD - Heads up display */
@@ -49,19 +51,20 @@
 
 .hud-main-text {
   text-align: center;
+  color: #AED9E0;
 }
 
 #progressBar {
   width: 20rem;
   height: 4rem;
-  border: .3rem solid #56a5eb;
+  border: .3rem solid #AED9E0;
   border-radius: 5rem;
   margin-top: 2rem;
 }
 
 #progressBarFull {
   height: 3.5rem;
-  background-color: #56a5eb;
+  background-color: #AED9E0;
   border-radius: 5rem;
   width: 50%;
 }

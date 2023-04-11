@@ -38,7 +38,7 @@ const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 
 startGame = () => {
-  timerCount = 120;
+  timerCount = 5;
   questionsCounter = 0;
   score = 0;
   availableQuestions = [...questions];
@@ -61,7 +61,7 @@ function startTime() {
 }
 // redirects player if timer ends before the questions do
 function pleaseWork() {
-  return window.location.assign("https://emcarr99.github.io/letsgetquizzical/end.html");
+  return window.location.assign("/letsgetquizzical/end.html");
 }
 
 getNewQuestion = () => {

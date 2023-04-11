@@ -61,14 +61,14 @@ function startTime() {
 }
 // redirects player if timer ends before the questions do
 function pleaseWork() {
-  return window.location.assign("end.html");
+  return window.location.assign("/end.html");
 }
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || timerCount === 0) {
     localStorage.setItem("mostRecentScore", score);
     // go to end page
-    return window.location.assign("../end.html");
+    return window.location.assign("/end.html");
   }
   questionsCounter++;
   progressText.innerText = "Question " + questionsCounter + "/" + MAX_QUESTIONS;

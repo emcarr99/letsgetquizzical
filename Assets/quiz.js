@@ -8,7 +8,7 @@ console.log(choices);
 const progressCounterText = document.getElementById("progressText");
 const scoreText = document.getElementById("score");
 const progressBarFull = document.getElementById("progressBarFull");
-const countdown = document.getElementById('timerCount');
+const countdown = document.getElementById("timerCount");
 let timer = 0;
 let timerCount = 120;
 let interval = setInterval(startTime, 1000);
@@ -28,7 +28,7 @@ fetch("questions.json")
     questions = loadedQuestions;
     startGame();
   })
-  // will show if file name is mistyped 
+  // will show if file name is mistyped
   // if something returns a promise, it's recommended to also do catch
   .catch((err) => {
     console.error(err);
@@ -48,20 +48,18 @@ startGame = () => {
   startTime();
   getNewQuestion();
 };
-
-function startTime () {
-  timer++
-  countdown.innerHTML = (convertSeconds(timerCount - timer));
+// timer function -> clear interval to stop timer from counting into the negatives
+function startTime() {
+  timer++;
+  countdown.innerHTML = convertSeconds(timerCount - timer);
 
   if (timer == timerCount) {
     clearInterval(interval);
   }
 }
 
-
-
 getNewQuestion = () => {
-  if (availableQuestions.length === 0 || (timerCount === 0)) {
+  if (availableQuestions.length === 0 || timerCount === 0) {
     localStorage.setItem("mostRecentScore", score);
     // go to end page
     return window.location.assign("/end.html");
@@ -103,8 +101,8 @@ choices.forEach((choice) => {
     if (classToApply == "correct") {
       incrementScore(CORRECT_BONUS);
     }
-
-    if (classToApply == 'incorrect') {
+    //  penalizes player if they get the question wrong by 5 seconds
+    if (classToApply == "incorrect") {
       timerCount -= 5;
     }
 
@@ -126,10 +124,11 @@ incrementScore = (num) => {
   scoreText.innerText = score;
 };
 
-// helps w visual
+// helps w visual of timer
 function convertSeconds(s) {
   var min = Math.floor(s / 60);
   var sec = s % 60;
   return min + ":" + sec;
 }
 
+setTimeout()

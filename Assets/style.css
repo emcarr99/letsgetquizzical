@@ -3,22 +3,25 @@
   font-size: 62.5%;
 }
 /* universal */
-*{
+* {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #5E6472;
 }
 /* default margin bottom for these tags */
 /* rem is relative to root size */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin-bottom: 1rem;
 }
 
-h1{
+h1 {
   font-size: 5.4rem;
-  color: #56a5eb;
+  color: #333;
   margin-bottom: 5rem;
 }
 
@@ -90,11 +93,12 @@ h3 {
   /* set to remove the default underline of an anchor tag */
   color: #56a5eb;
   background-color: white;
+  border-radius: 2rem;
 }
 /* creates a glow around button */
 .btn:hover {
   cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, .5);
+  box-shadow: 0 0.4rem 1.4rem 0 #FFA69E;
   transform: translate(-0.1rem);
   transition: transform 150ms;
 }
@@ -119,9 +123,19 @@ input {
   padding: 1.5rem;
   font-size: 1.8rem;
   border: none;
-  box-shadow: 0 .01rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  box-shadow: 0 0.01rem 1.4rem 0 rgba(86, 185, 235, 0.5);
 }
 
 input::placeholder {
   color: #aaa;
+}
+
+.fluff {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 4rem;
+  color: #56a5eb;
+  margin-bottom: 5rem;
 }

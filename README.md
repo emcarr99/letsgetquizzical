@@ -6,7 +6,7 @@ A quiz all about fun facts about me! Created with JavaScript, html, css. The qui
 ## Installation
 N/A
 ## Usage 
-You can access the quiz here: 
+You can access the quiz here: https://emcarr99.github.io/letsgetquizzical/
 
 Upon clicking the above link, you will be taken to the Home page where you have the choice to 'Play' or checkout the 'High Scores' page. Can't make it on the high score page unless you play tho! 
 <img src = "Assets/Images/homepage.png">

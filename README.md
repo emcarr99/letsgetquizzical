@@ -17,7 +17,7 @@ The progress bar will fill up as you continue through the quiz when you get an a
 <img src = "Assets/Images/wrongAnswer.png">
 <img src = "Assets/Images/rightAnswer.png">
 
-If you're stuck on a question and run out of time(so sad) then you will automatically be directed to the end of the quiz. If you complete the quiz in time, then you will end up at the same end page. Where you will enter your initials or name and click 'save' to save your score! If you (or friends) play more than 5 times (on the same browser) then you can check out the top 5 high scores on the 'High Score' page! (pst! Clicking on the 'Cheat Sheet' right now will bring you to a 'coming soon' page but soon will have the quiz answers)
+If you're stuck on a question and run out of time(so sad) then you will automatically be directed to the end of the quiz. If you complete the quiz in time, then you will end up at the same end page. Where you will enter your initials or name and click 'save' to save your score! If you (or friends) play more than 5 times (on the same browser) then you can check out the top 5 high scores on the 'High Score' page! 
 
 <img src = "Assets/Images/initialsPage.png">
 <img src = "Assets/Images/HighScorePage.png">

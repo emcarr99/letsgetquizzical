@@ -38,7 +38,7 @@ const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 
 startGame = () => {
-  timerCount = 5;
+  timerCount = 120;
   questionsCounter = 0;
   score = 0;
   availableQuestions = [...questions];
@@ -63,12 +63,13 @@ function startTime() {
 function pleaseWork() {
   return window.location.assign("/letsgetquizzical/end.html");
 }
+// absolute path needed for redirections
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || timerCount === 0) {
     localStorage.setItem("mostRecentScore", score);
     // go to end page
-    return window.location.assign("/end.html");
+    return window.location.assign("/letsgetquizzical/end.html");
   }
   questionsCounter++;
   progressText.innerText = "Question " + questionsCounter + "/" + MAX_QUESTIONS;

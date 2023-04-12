@@ -33,7 +33,7 @@ saveHighScore = (e) => {
   highScore.splice(5);
 
   localStorage.setItem('highScore', JSON.stringify(highScore));
-  window.location.assign('/');
+  window.location.assign('/index.html');
 }; 
 // has GET item instead of SET ite
 

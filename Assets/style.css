@@ -62,9 +62,6 @@ h3 {
   padding: 2rem;
 }
 /* applies to any children of container */
-#containerMe > * {
-  width: 100%;
-}
 
 .flex-columns {
   display: flex;
@@ -149,3 +146,4 @@ input::placeholder {
 }
 
 
+ 

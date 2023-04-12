@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   color: #5E6472;
+  
 }
 /* default margin bottom for these tags */
 /* rem is relative to root size */
@@ -45,6 +46,7 @@ h3 {
 .bodyB {
   background-color: antiquewhite;
   font-size: 62.5%;
+  width: 100%;
 }
 
 /* utilities */
@@ -60,7 +62,7 @@ h3 {
   padding: 2rem;
 }
 /* applies to any children of container */
-.containerMe > * {
+#containerMe > * {
   width: 100%;
 }
 
@@ -145,3 +147,5 @@ input::placeholder {
   color: #56a5eb;
   margin-bottom: 5rem;
 }
+
+
